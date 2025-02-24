@@ -3,9 +3,10 @@
     <section class="py-12">
         <div class="container">
             <div class="py-16 flex flex-col gap-4 justify-center items-center text-center">
-                <h1 class="text-6xl leading-tight font-bold">Selamat Datang di<br /> Pondok Pesantren Nurul Iman</br />
+                <h1 class="text-4xl lg:text-5xl leading-snug font-bold">Selamat Datang di<br /> Pondok Pesantren Nurul
+                    Iman</br />
                     Sindangkerta</h1>
-                <p class="text-xl italic text-green-600">
+                <p class="text-xl italic font-semibold">
                     <q>{{ config('common.common.moto') }}</q>
                 </p>
                 <div class="flex gap-2 items-center py-8">
@@ -47,9 +48,9 @@
     {{-- ayo daftar --}}
     <section class="py-6">
         <div class="container">
-            <div class="flex justify-between italic">
+            <div class="flex flex-col lg:flex-row justify-between italic items-center text-center gap-8">
                 <h2 class="title">Ayo mondok di Ponpes Nurul Iman Sindangkerta</h2>
-                <a href="{{ route('kontak') }}" class="btn">Daftar</a>
+                <a href="{{ route('kontak') }}" class="btn w-fit">Daftar</a>
             </div>
         </div>
     </section>

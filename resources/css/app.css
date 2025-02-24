@@ -9,6 +9,10 @@ body {
     @apply !font-cairo;
 }
 
+#mobile-nav nav::-webkit-scrollbar {
+    @apply hidden;
+}
+
 .container {
     @apply max-w-6xl mx-auto h-full px-4 sm:px-6 lg:px-8;
 }

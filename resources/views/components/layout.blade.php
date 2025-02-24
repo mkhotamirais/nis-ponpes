@@ -56,16 +56,46 @@
                     </nav>
                 </div>
                 {{-- mobile nav --}}
-                <div x-data="{ openMobileNav: false }" class="flex lg:hidden">
+                <div id="mobile-nav" x-data="{ openMobileNav: true }" class="flex lg:hidden">
                     <button x-on:click="openMobileNav = !openMobileNav" type="button"
                         :class="openMobileNav ? 'rotate-180' : ''" class="transition">
                         <x-heroicon-o-bars-3 x-show="!openMobileNav" />
                         <x-heroicon-o-x-mark x-show="openMobileNav" />
                     </button>
-                    <div x-on:click="openMobileNav = false" :class="openMobileNav ? 'block' : 'hidden'"
-                        class="fixed inset-0 bg-black/50 transition">
-                        <nav>
-                            <div>mobile nav halo</div>
+                    <div x-on:click="openMobileNav = false"
+                        :class="openMobileNav ? 'opacity-100 visible' : 'opacity-0 invisible'"
+                        class="fixed inset-0 bg-black/50 transition-all duration-500">
+                        <nav x-on:click="(e) => e.stopPropagation()"
+                            :class="openMobileNav ? 'translate-x-0' : '-translate-x-full'"
+                            class="overflow-y-scroll w-[85%] sm:w-80 h-full bg-white border-r border-gray-800 transition-all duration-300 p-8">
+                            <x-logo />
+                            <div class="border-l-2 pl-3 border-l-green-500 my-6 ">
+                                <x-socials />
+                            </div>
+                            <div class="flex flex-col mt-4">
+                                @foreach (config('common.header.menu') as $menu)
+                                    <div x-data="{ openMobileMenu: false }" class="relative group">
+                                        <a href="{{ $menu['href'] }}" x-on:click="openMobileMenu = !openMobileMenu"
+                                            class="border-b py-3 hover:text-green-600 flex justify-between items-center">
+                                            <span>{{ $menu['label'] }}</span>
+                                            @if (isset($menu['submenu']))
+                                                <div :class="openMobileMenu ? 'rotate-180' : ''">
+                                                    <x-heroicon-o-chevron-down
+                                                        class="size-4 font-semibold transition-all" />
+                                                </div>
+                                            @endif
+                                        </a>
+                                        @if (isset($menu['submenu']))
+                                            <div x-show="openMobileMenu" class="flex flex-col pl-2 mt-2">
+                                                @foreach ($menu['submenu'] as $submenu)
+                                                    <a href="{{ $submenu['href'] }}"
+                                                        class="py-2 hover:text-green-600">{{ $submenu['label'] }}</a>
+                                                @endforeach
+                                            </div>
+                                        @endif
+                                    </div>
+                                @endforeach
+                            </div>
                         </nav>
                     </div>
                 </div>
@@ -75,7 +105,7 @@
     {{-- main --}}
     <main class="grow">{{ $slot }}</main>
     <a href={{ config('common.common.links.wa-url.href') }}
-        class="fixed right-6 lg:right-12 bottom-6 bg-green-500/80 p-2 px-4 text-white hover:bg-green-600 transition-all duration-300 rounded-full flex items-center gap-2">
+        class="!z-50 fixed right-6 lg:right-12 bottom-6 bg-green-500/80 p-2 px-4 text-white hover:bg-green-600 transition-all duration-300 rounded-full flex items-center gap-2">
         <x-fab-whatsapp /> <span class="font-semibold text-lg hidden lg:block">Hubungi Kami</span>
     </a>
     {{-- footer --}}
