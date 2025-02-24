@@ -56,7 +56,7 @@
                     </nav>
                 </div>
                 {{-- mobile nav --}}
-                <div id="mobile-nav" x-data="{ openMobileNav: true }" class="flex lg:hidden">
+                <div id="mobile-nav" x-data="{ openMobileNav: false }" class="flex lg:hidden">
                     <button x-on:click="openMobileNav = !openMobileNav" type="button"
                         :class="openMobileNav ? 'rotate-180' : ''" class="transition">
                         <x-heroicon-o-bars-3 x-show="!openMobileNav" />
