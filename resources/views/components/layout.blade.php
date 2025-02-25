@@ -111,7 +111,7 @@
     {{-- footer --}}
     <footer class="pt-12 border-t">
         <div class="container">
-            <div class="mb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 place-items-start gap-8">
+            <div class="mb-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 place-items-start gap-8">
                 <div>
                     <x-logo />
                     <p class="italic mb-2 mt-4">
@@ -162,7 +162,7 @@
                             <x-heroicon-o-envelope class="size-5 min-w-max" />
                             <span>{{ config('common.common.links.email-url.label') }}</span>
                         </a>
-                        <div class="line my-4">
+                        <div class="line !my-4">
                             <div class="line1"></div>
                             <div class="line2"></div>
                         </div>
