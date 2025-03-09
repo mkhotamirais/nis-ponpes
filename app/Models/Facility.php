@@ -2,19 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Newsarticle extends Model
+class Facility extends Model
 {
-    /** @use HasFactory<\Database\Factories\NewsarticleFactory> */
-    use HasFactory;
-
     protected $fillable = [
-        'title',
+        'caption',
         'slug',
-        'content',
-        'banner',
+        'image',
     ];
 
     public function getRouteKeyName()

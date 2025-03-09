@@ -7,23 +7,21 @@
             class="text-center z-20 absolute border w-full bg-[radial-gradient(circle,rgba(0,0,0,0.6)_0%,rgba(0,0,0,0.1)_100%)]">
             <div class="container">
                 <div class="h-[100vh] flex flex-col gap-4 justify-center items-center text-center !text-white">
-                    <h1 class="text-4xl lg:text-6xl leading-snug font-bold">Selamat Datang di<br /> Pondok Pesantren
-                        Nurul
-                        Iman</br />
-                        Sindangkerta</h1>
+                    <h1 class="text-4xl lg:text-6xl leading-snug font-bold">{!! config('common.home.hero.title') !!}</h1>
                     <p class="text-2xl italic font-semibold">
                         <q>{{ config('common.common.moto') }}</q>
                     </p>
                     <div class="flex flex-col md:flex-row gap-2 items-center py-8">
-                        <button class="btn border-2 border-green-500 w-44 lg:py-4 font-semibold text-lg">Daftar</button>
                         <button
-                            class="btn w-44 lg:py-4 font-semibold text-lg !bg-transparent border-2 border-green-300 hover:text-green-300">Tentang
-                            Pondok</button>
+                            class="btn border-2 border-green-500 w-44 lg:py-4 font-semibold text-lg">{{ config('common.common.register-btn') }}</button>
+                        <button
+                            class="btn w-44 lg:py-4 font-semibold text-lg !bg-transparent border-2 border-green-300 hover:text-green-300">{{ config('common.common.about-btn') }}</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     {{-- sambutan pimpinan --}}
     <section class="py-12 bg-white md:bg-gray-50">
         <div class="container">
@@ -48,44 +46,71 @@
                         class="font-semibold text-green-600 mt-4 inline-block">Selengkapnya</a>
                 </div>
             </div>
-
-
         </div>
     </section>
+
     {{-- prestasi --}}
     <section class="py-12">
         <div class="container">
-            <h2 class="title">Prestasi</h2>
+            <div class="text-center mb-8">
+                <h2 class="title">{{ config('common.home.achievement.title') }}</h2>
+                <p class="text-lg !text-gray-600 max-w-lg mx-auto">
+                    {{ config('common.home.achievement.description') }}
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                @foreach ($achievements as $item)
+                    <div class="flex flex-col">
+                        <img src="{{ $item->banner ? asset('storage/' . $item->banner) : asset('storage/images/ponpes-nis-logo.png') }}"
+                            alt="{{ $item->title }}"
+                            class="{{ $item->banner ? 'object-cover' : 'object-contain scale-90' }} h-56 w-full z-40 rounded-lg mb-2">
+                        <a href="{{ route('informasi.berita-artikel', $item->slug) }}" class="grow hover:underline">
+                            <h3 class="title w-fit first:capitalize">{{ Str::limit($item->title, 75) }}</h3>
+                        </a>
+                        {{-- <a href="{{ route('news.show', $item->slug) }}" class="btn !w-fit mt-2">Selengkapnya</a> --}}
+                    </div>
+                @endforeach
+            </div>
+            <a href="{{ route('informasi.prestasi') }}" class="btn-lainnya">Lihat Lainnya</a>
         </div>
     </section>
-    <hr>
+
     {{-- ekstrakulikuler --}}
     <section class="py-12 bg-green-600">
         <div class="container">
             <div class="text-center mb-8">
-                <h2 class="title !text-white">Ekstrakulikuler</h2>
-                <p class="text-lg !text-white max-w-lg mx-auto">Kembangkan bakat dan minat santri dengan bimbinang
-                    khusus dari pembimbing
-                    yang menguasai bidangnya (minta saran tulisan ini)</p>
+                <h2 class="title !text-white">{{ config('common.home.ekstrakulikuler.title') }}</h2>
+                <p class="text-lg !text-white max-w-lg mx-auto">{{ config('common.home.ekstrakulikuler.description') }}
+                </p>
             </div>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                @foreach (array_slice(config('common.ekstrakulikuler.items'), 0, 3) as $item)
-                    <x-card-ekstrakulikuler :item="$item" />
-                @endforeach
-            </div>
-            <a href="{{ route('ekstrakulikuler') }}"
-                class="btn !bg-white font-semibold !text-green-500 hover:!text-green-600 text-lg mx-auto block w-fit mt-8">Ekstrakulikuler
-                Lainnya</a>
+            <a href="{{ route('ekstrakulikuler') }}" class="btn-lainnya">Lihat Lainnya</a>
         </div>
     </section>
-    <hr>
+
     {{-- artikel dan berita --}}
     <section class="py-12">
         <div class="container">
-            <h2 class="title">Artikel & Berita</h2>
+            <div class="text-center mb-8">
+                <h2 class="title">{{ config('common.home.newsarticles.title') }}</h2>
+                <p class="text-lg !text-gray-600 max-w-lg mx-auto">{{ config('common.home.newsarticles.description') }}
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                @foreach ($newsarticles as $item)
+                    <div class="flex flex-col">
+                        <img src="{{ $item->banner ? asset('storage/' . $item->banner) : asset('storage/images/ponpes-nis-logo.png') }}"
+                            alt="{{ $item->title }}"
+                            class="{{ $item->banner ? 'object-cover' : 'object-contain scale-90' }} h-56 w-full z-40 rounded-lg mb-2">
+                        <a href="{{ route('informasi.berita-artikel', $item->slug) }}" class="grow hover:underline">
+                            <h3 class="title w-fit first:capitalize">{{ Str::limit($item->title, 75) }}</h3>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+            <a href="{{ route('informasi.berita-artikel') }}" class="btn-lainnya">Lihat Lainnya</a>
         </div>
     </section>
-    <hr>
+
     {{-- ayo daftar --}}
     <section class="py-8 bg-green-600">
         <div class="container">
@@ -97,11 +122,21 @@
             </div>
         </div>
     </section>
-    <hr>
+
     {{-- fasilitas --}}
     <section class="py-12">
         <div class="container">
-            <h2 class="title">Fasilitas</h2>
+            <div class="text-center mb-8">
+                <h2 class="title">{{ config('common.home.facilities.title') }}</h2>
+                <p class="text-lg !text-gray-600 max-w-lg mx-auto">{{ config('common.home.facilities.description') }}
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                @foreach ($facilities as $facility)
+                    <x-card-facility :item="$facility"></x-card-facility>
+                @endforeach
+            </div>
+            <a href="{{ route('fasilitas') }}" class="btn-lainnya">Lihat Lainnya</a>
         </div>
     </section>
 </x-layout>

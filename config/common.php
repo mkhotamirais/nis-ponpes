@@ -11,8 +11,16 @@ return [
         "moto" => "Lembur ilmu, Majelis disiplin, Kancah ibadah dan Wahana perjuangan",
         "moto2" => "Nurul Iman tempat orang baik dan orang orang yang ingn menjadi baik",
         "address" => "Kp. Bangong Rt 02/01, Desa Pasirpogor, Kec. Sindangkerta, Kab. Bandung Barat, Jawa Barat, 40563",
+        "register-btn" => "Daftar",
+        "about-btn" => "Tentang Pondok",
     ],
     "header" => [
+        "menuadmin" => [
+            ["href" => "/dashboard", "label" => "Dashboard", "route" => "dashboard"],
+            ["href" => "/newsarticles", "label" => "Berita", "route" => "newsarticles.index"],
+            ["href" => "/achievements", "label" => "Prestasi", "route" => "achievements.index"],
+            ["href" => "/facilities", "label" => "Fasilitas", "route" => "facilities.index"],
+        ],
         "menu" => [
             ["label" => "Home", "href" => "/", "route" => "home"],
             [
@@ -29,7 +37,7 @@ return [
                 "href" => "#",
                 "submenu" => [
                     // ["label" => "Pengumuman", "href" => "/informasi/pengumuman", "route" => "informasi.pengumuman"],
-                    ["label" => "Agenda", "href" => "/informasi/agenda", "route" => "informasi.agenda"],
+                    // ["label" => "Agenda", "href" => "/informasi/agenda", "route" => "informasi.agenda"],
                     ["label" => "Prestasi", "href" => "/informasi/prestasi", "route" => "informasi.prestasi"],
                     ["label" => "Berita & Artikel", "href" => "/informasi/berita-artikel", "route" => "informasi.berita-artikel"]
                 ]
@@ -55,6 +63,9 @@ return [
         ]
     ],
     "home" => [
+        "hero" => [
+            "title" => "Selamat Datang di<br /> Pondok Pesantren Nurul Iman</br /> Sindangkerta",
+        ],
         "speech" => [
             "title" => "Sambutan Pimpinan",
             "grand-sheikh" => "KH Jaeni Marjuki, M.Ag",
@@ -74,18 +85,22 @@ return [
                 "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo ut architecto dolores aperiam? Quidem doloremque distinctio, quos eos voluptatem, voluptatum ab est amet facere, nihil ipsa asperiores aspernatur perferendis? Debitis similique minus illum, aliquid, vitae aspernatur molestias veritatis eligendi."
             ]
         ],
+        "achievement" => [
+            "title" => "Prestasi",
+            "description" => "Menampilkan berbagai prestasi yang telah diraih oleh santri, baik di tingkat lokal, nasional, maupun internasional.",
+        ],
+        "ekstrakulikuler" => [
+            "title" => "Ekstrakulikuler",
+            "description" => "Kembangkan bakat dan minat santri dengan bimbingan khusus dari pembimbing yang ahli di bidangnya.",
+        ],
+        "newsarticles" => [
+            "title" => "Berita & Artikel",
+            "description" => "Dapatkan informasi terkini seputar kegiatan, acara, dan berbagai artikel inspiratif yang bermanfaat.",
+        ],
+        "facilities" => [
+            "title" => "Fasilitas",
+            "description" => "Beragam fasilitas lengkap dan modern tersedia untuk mendukung kenyamanan dan kualitas pembelajaran santri.",
+        ],
+
     ],
-    "ekstrakulikuler" => [
-        "title" => "Ekstrakulikuler",
-        "description" => "Ekstrakulikuler Pondok Pesantren Nurul Iman Sindangkerta",
-        "items" => [
-            ["name" => "hadroh", "description" => "Bernyanyi dan bergendang dengan kami", "image" => "storage/ekskul/hadroh_1.jpg", "detail" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, quos."],
-            ["name" => "tilawah", "description" => "Mengaji dengan lantunan yang merdu", "image" => "storage/ekskul/tilawah_1.jpg", "detail" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, quos."],
-            ["name" => "panahan", "description" => "Fokus pada satu titik tujuan", "image" => "storage/ekskul/hadroh_1.jpg", "detail" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, quos."],
-            ["name" => "tahfiz", "description" => "Kuatkan kemampuan mengingat dengan baik", "image" => "storage/ekskul/tahfiz_1.jpg", "detail" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, quos."],
-            ["name" => "tatarias", "description" => "Kembangkan daya kreasi dengan kreatifitas", "image" => "storage/ekskul/hadroh_1.jpg", "detail" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, quos."],
-            ["name" => "pagarnusa", "description" => "Di dalam raga yang kuat terdapat jiwa yang kuat", "image" => "storage/ekskul/pagarnusa_1.jpg", "detail" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, quos."],
-            ["name" => "kaligrafil", "description" => "Buat tulisan indah yang menyejukan mata", "image" => "storage/ekskul/kaligrafi_1.jpg", "detail" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, quos."],
-        ]
-    ]
 ];
