@@ -58,7 +58,7 @@
                     {{ config('common.home.achievement.description') }}
                 </p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
                 @foreach ($achievements as $item)
                     <div class="flex flex-col">
                         <img src="{{ $item->banner ? asset('storage/' . $item->banner) : asset('storage/images/ponpes-nis-logo.png') }}"
@@ -79,9 +79,14 @@
     <section class="py-12 bg-green-600">
         <div class="container">
             <div class="text-center mb-8">
-                <h2 class="title !text-white">{{ config('common.home.ekstrakulikuler.title') }}</h2>
-                <p class="text-lg !text-white max-w-lg mx-auto">{{ config('common.home.ekstrakulikuler.description') }}
+                <h2 class="title !text-white">{{ config('common.home.extracurricular.title') }}</h2>
+                <p class="text-lg !text-white max-w-lg mx-auto">{{ config('common.home.extracurricular.description') }}
                 </p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+                @foreach ($extracurriculars as $item)
+                    <x-card-extracurricular :item="$item"></x-card-extracurricular>
+                @endforeach
             </div>
             <a href="{{ route('ekstrakulikuler') }}" class="btn-lainnya">Lihat Lainnya</a>
         </div>
@@ -95,7 +100,7 @@
                 <p class="text-lg !text-gray-600 max-w-lg mx-auto">{{ config('common.home.newsarticles.description') }}
                 </p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
                 @foreach ($newsarticles as $item)
                     <div class="flex flex-col">
                         <img src="{{ $item->banner ? asset('storage/' . $item->banner) : asset('storage/images/ponpes-nis-logo.png') }}"

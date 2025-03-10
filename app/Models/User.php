@@ -60,4 +60,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Facility::class);
     }
+
+    public function extracurriculars()
+    {
+        return $this->hasMany(Extracurricular::class);
+    }
 }

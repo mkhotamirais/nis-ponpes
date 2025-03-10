@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="{!! strip_tags(html_entity_decode(config('common.meta.informasi.berita-artikel.title'))) !!}" :description="config('common.meta.informasi.berita-artikel.description')">
     <x-section-hero title="Berita" :description="config('common.home.newsarticles.description')" />
     <section class="py-12">
         <div class="container">

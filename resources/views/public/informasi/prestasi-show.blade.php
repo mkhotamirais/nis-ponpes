@@ -1,4 +1,4 @@
-<x-layout :title="$achievement->title" :description="config('meta.prestasi.description')">
+<x-layout :title="strip_tags(html_entity_decode(Str::words($achievement->title, 8)))" :description="strip_tags(html_entity_decode(Str::words($achievement->content, 25)))">
     <section class="section">
         <div class="container">
             <div class="flex flex-col lg:flex-row gap-14 items-start">

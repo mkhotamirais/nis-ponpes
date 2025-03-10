@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout :title="config('common.meta.fasilitas.title')" :description="config('common.meta.fasilitas.description')">
     <x-section-hero title="Fasilitas" :description="config('common.home.facilities.description')" />
     <section class="py-12">
         <div class="container">
@@ -7,7 +7,7 @@
                     <x-card-facility :item="$facility"></x-card-facility>
                 @endforeach
             </div>
-            <div class="my-6">
+            <div class="mt-8">
                 {{ $facilities->links() }}
             </div>
         </div>

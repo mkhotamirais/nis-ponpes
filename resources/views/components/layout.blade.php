@@ -1,3 +1,5 @@
+@props(['title' => config('common.meta.home.title'), 'description' => config('common.meta.home.description')])
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +7,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ponpes Nurul Iman Sindangkerta</title>
+
+    <title>{{ $title ?: 'Ponpes Nurul Iman Sindangkerta' }}</title>
+    <meta name="description" content="{{ $description ?: 'Pondok Pesantren terbaik di bandung barat' }}">
 
     {{-- favicon --}}
     <link rel="icon" type="image/x-icon" href="{{ asset('storage/images/favicon.ico') }}">

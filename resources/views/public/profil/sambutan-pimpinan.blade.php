@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout :title="config('common.meta.profil.sambutan-pimpinan.title')" :description="config('common.meta.profil.sambutan-pimpinan.description')">
     <x-section-hero title="Sambutan Pimpinan" description="Sambutan Pimpinan Pondok Pesantren Nurul Iman Sindangkerta" />
     <section class="py-8">
         <div class="container">

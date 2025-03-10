@@ -1,4 +1,4 @@
-<x-layout title="Prestasi">
+<x-layout :title="config('common.meta.informasi.prestasi.title')" :description="config('common.meta.informasi.prestasi.description')">
     <x-section-hero title="Prestasi" :description="config('common.home.achievement.description')" />
     <section class="py-12">
         <div class="container">

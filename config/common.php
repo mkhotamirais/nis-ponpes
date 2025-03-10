@@ -20,6 +20,7 @@ return [
             ["href" => "/newsarticles", "label" => "Berita", "route" => "newsarticles.index"],
             ["href" => "/achievements", "label" => "Prestasi", "route" => "achievements.index"],
             ["href" => "/facilities", "label" => "Fasilitas", "route" => "facilities.index"],
+            ["href" => "/extracurriculars", "label" => "Ekstrakulikuler", "route" => "extracurriculars.index"],
         ],
         "menu" => [
             ["label" => "Home", "href" => "/", "route" => "home"],
@@ -89,7 +90,7 @@ return [
             "title" => "Prestasi",
             "description" => "Menampilkan berbagai prestasi yang telah diraih oleh santri, baik di tingkat lokal, nasional, maupun internasional.",
         ],
-        "ekstrakulikuler" => [
+        "extracurricular" => [
             "title" => "Ekstrakulikuler",
             "description" => "Kembangkan bakat dan minat santri dengan bimbingan khusus dari pembimbing yang ahli di bidangnya.",
         ],
@@ -103,4 +104,46 @@ return [
         ],
 
     ],
+    "meta" => [
+        "home" => [
+            "title" => "Ponpes Nurul Iman Sindangkerta",
+            "description" => "Ponpes Nurul Iman Sindangkerta adalah lembaga pendidikan Islam yang berkomitmen untuk mencetak generasi unggul yang berakhlak mulia dan berprestasi.",
+        ],
+        "profil" => [
+            "sambutan-pimpinan" => [
+                "title" => "Sambutan Pimpinan",
+                "description" => "Sambutan Pimpinan Pondok Pesantren Nurul Iman Sindangkerta",
+            ],
+            "sejarah" => [
+                "title" => "Sejarah",
+                "description" => "Sejarah berdirinya Pondok Pesantren Nurul Iman Sindangkerta",
+            ],
+            "visi-misi" => [
+                "title" => "Visi Misi",
+                "description" => "Visi dan Misi Pondok Pesantren Nurul Iman Sindangkerta",
+            ],
+        ],
+        "informasi" => [
+            "berita-artikel" => [
+                "title" => "Berita & Artikel",
+                "description" => "Berita dan artikel terkini seputar kegiatan dan acara di Pondok Pesantren Nurul Iman Sindangkerta",
+            ],
+            "prestasi" => [
+                "title" => "Prestasi",
+                "description" => "Prestasi santri Pondok Pesantren Nurul Iman Sindangkerta di berbagai bidang",
+            ],
+        ],
+        "fasilitas" => [
+            "title" => "Fasilitas",
+            "description" => "Fasilitas lengkap dan modern di Pondok Pesantren Nurul Iman Sindangkerta",
+        ],
+        "ekstrakulikuler" => [
+            "title" => "Ekstrakulikuler",
+            "description" => "Ekstrakulikuler di Pondok Pesantren Nurul Iman Sindangkerta",
+        ],
+        "kontak" => [
+            "title" => "Kontak",
+            "description" => "Kontak Pondok Pesantren Nurul Iman Sindangkerta",
+        ],
+    ]
 ];

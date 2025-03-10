@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Achievement;
+use App\Models\Extracurricular;
 use App\Models\Facility;
 use App\Models\Newsarticle;
 
@@ -13,7 +14,8 @@ class PublicController extends Controller
         $newsarticles = Newsarticle::latest()->take(4)->get();
         $achievements = Achievement::latest()->take(4)->get();
         $facilities = Facility::latest()->take(4)->get();
-        return view('welcome', compact('newsarticles', 'achievements', 'facilities'));
+        $extracurriculars = Extracurricular::latest()->take(4)->get();
+        return view('welcome', compact('newsarticles', 'achievements', 'facilities', 'extracurriculars'));
     }
 
     public function beritaartikel()
@@ -32,5 +34,11 @@ class PublicController extends Controller
     {
         $facilities = Facility::latest()->paginate(8);
         return view('public.fasilitas', compact('facilities'));
+    }
+
+    public function ekstrakulikuler()
+    {
+        $extracurriculars = Extracurricular::latest()->paginate(8);
+        return view('public.ekstrakulikuler', compact('extracurriculars'));
     }
 }
