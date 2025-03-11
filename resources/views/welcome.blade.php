@@ -4,7 +4,7 @@
         <img src="{{ asset('storage/images/hero.jpg') }}" alt="Ponpes Nurul Iman Hero Image"
             class="absolute object-cover object-center bottom-0 z-10 h-full w-full">
         <div
-            class="text-center z-20 absolute border w-full bg-[radial-gradient(circle,rgba(0,0,0,0.6)_0%,rgba(0,0,0,0.1)_100%)]">
+            class="text-center z-20 absolute w-full bg-[radial-gradient(circle,rgba(0,0,0,0.6)_0%,rgba(0,0,0,0.1)_100%)]">
             <div class="container">
                 <div class="h-[100vh] flex flex-col gap-4 justify-center items-center text-center !text-white">
                     <h1 class="text-4xl lg:text-6xl leading-snug font-bold">{!! config('common.home.hero.title') !!}</h1>
@@ -12,8 +12,8 @@
                         <q>{{ config('common.common.moto') }}</q>
                     </p>
                     <div class="flex flex-col md:flex-row gap-2 items-center py-8">
-                        <button
-                            class="btn border-2 border-green-500 w-44 lg:py-4 font-semibold text-lg">{{ config('common.common.register-btn') }}</button>
+                        <a href="{{ config('common.common.links.ppdb') }}"
+                            class="btn border-2 border-green-500 w-44 lg:py-4 font-semibold text-lg">{{ config('common.common.register-btn') }}</a>
                         <button
                             class="btn w-44 lg:py-4 font-semibold text-lg !bg-transparent border-2 border-green-300 hover:text-green-300">{{ config('common.common.about-btn') }}</button>
                     </div>

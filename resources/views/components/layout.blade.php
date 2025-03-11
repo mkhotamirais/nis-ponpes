@@ -109,7 +109,7 @@
     {{-- main --}}
     <main class="grow">{{ $slot }}</main>
     <a href={{ config('common.common.links.wa-url.href') }}
-        class="!z-50 fixed right-6 lg:right-12 bottom-6 bg-green-500/80 p-2 px-4 text-white hover:bg-green-600 transition-all duration-300 rounded-full flex items-center gap-2">
+        class="!z-50 fixed right-6 lg:right-12 bottom-6 bg-green-500 p-2 px-4 text-white hover:bg-green-600 transition-all duration-300 rounded-full flex items-center gap-2">
         <x-fab-whatsapp /> <span class="font-semibold text-lg hidden lg:block">Hubungi Kami</span>
     </a>
     {{-- footer --}}
