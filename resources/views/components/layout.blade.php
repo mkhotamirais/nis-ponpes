@@ -11,6 +11,19 @@
     <title>{{ $title ?: 'Ponpes Nurul Iman Sindangkerta' }}</title>
     <meta name="description" content="{{ $description ?: 'Pondok Pesantren terbaik di bandung barat' }}">
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VQB68EB2FC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VQB68EB2FC');
+    </script>
+
     {{-- favicon --}}
     <link rel="icon" type="image/x-icon" href="{{ asset('storage/images/favicon.ico') }}">
 
