@@ -12,7 +12,7 @@
     <meta name="description" content="{{ $description ?: 'Pondok Pesantren terbaik di bandung barat' }}">
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VQB68EB2FC"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QYE78R7SS"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -21,7 +21,7 @@
         }
         gtag('js', new Date());
 
-        gtag('config', 'G-VQB68EB2FC');
+        gtag('config', 'G-3QYE78R7SS');
     </script>
 
     {{-- favicon --}}
